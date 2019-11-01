@@ -1,0 +1,50 @@
+body {
+  background: #fafafa;
+}
+
+#header {
+  width: 100%;
+
+/*position을 absolute로 설정하면, 부모를 기준으로 위치를 잡음*/
+  position: absolute;
+  top: 0; /* 부모를 기준으로 0px만큼 이동*/
+  left: 0;
+  z-index: 999; /* z-index가 높으면 화면에서 제일 앞에 나타남*/
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: white;
+  /* rgba : rgb + 투명도로, 0,0,0,0.1은 검정색을 매우 투명하게
+(0이 투명이고 1이 불투명임) */
+}
+
+#header .inner {
+  width: 80%;
+  height: 70px;
+  /* 가운데 정렬 */
+  margin: 0 auto;
+}
+
+#header .inner .logo > a {
+  color: transparent;
+}
+
+#header .inner .logo div  {
+  vertical-align: middle;
+}
+
+/*
+아이콘들
+*/
+
+.sprite_insta_icon {
+  display: inline-block;
+	background: url('../imgs/background01.png') no-repeat -53px -235px;
+	width: 22px;
+	height: 22px;
+}
+
+.sprite_write_logo {
+  display: inline-block;
+	background: url('../imgs/background01.png') no-repeat -94px -72px;
+	width: 103px;
+	height: 29px;
+}
