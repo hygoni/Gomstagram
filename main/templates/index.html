@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
 <head>
 	<title>Gonstagram</title>
-	<link rel="stylesheet" href="./css/reset.css">
-	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="{% static './css/style.css' %}">
+	<link rel="stylesheet" href="{% static './css/reset.css' %}">
+        <link rel="icon" href="{% static './imgs/favicon.ico' %}">
 </head>
 <body>
 <section id="container">
