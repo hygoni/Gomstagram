@@ -21,6 +21,11 @@ body {
   height: 70px;
   /* 가운데 정렬 */
   margin: 0 auto;
+  display: flex; /* 자식들 다 인라인으로 정렬 */
+  justify-content: space-between; /*블록요소 간 사이사이 간격을 적당히 (가로 정렬)*/
+  align-items: center; /* IDEA: 세로 정렬 (inner의 중간을 기준점으로) */
+
+
 }
 
 #header .inner .logo > a {
@@ -29,6 +34,82 @@ body {
 
 #header .inner .logo div  {
   vertical-align: middle;
+}
+
+#header .inner .logo .sprite_insta_icon::after {
+  content: '';
+  width: 1px;
+  height: 28px;
+  background: #000;
+  position: absolute;
+  right: -15px; /*잘 모르겠다 찾아보자*/
+  top: -4px;
+}
+
+#header .inner .logo div:nth-child(2){
+  transform: translateY(2px);
+}
+
+#header .inner .logo .sprite_insta_icon {
+  position: relative;
+  margin-right: 30px;
+}
+
+
+#search-field {
+  width: 185px;
+  height: 28px;
+  background: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  padding: 3px 30px;
+  font-weight: 400;
+  text-align: left;
+  font-size: 14px;
+  outline: none;
+}
+
+
+/* IDEA: 가상 선택자를 더 공부하면 좋을 거 같다 콜론 하나랑 두개랑 무슨 차이? */
+#search-field::placeholder {
+  font-size: 0;
+}
+
+#search-field:focus::placeholder {
+  font-size: 14px;
+}
+
+/* IDEA: 물결 의미를 잘 모르겠다 */
+#search-field:focus ~ .fake_field > span:nth-child(1) {
+  transform: translateX(-105px);
+}
+
+#search-field:focus ~ .fake_field > span:nth-child(2) {
+  display: none;
+}
+
+/* IDEA: 이 부분은 잘 모르겠다 찾아보자.
+암튼 fake field를 정 중앙으로 옮긴다. */
+#header .search_box .fake_field {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+#header .search_box {
+  position: relative;
+}
+
+#header .right_icons {
+  width: 132px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#header .right_icons > div {
+
 }
 
 /*
@@ -47,4 +128,39 @@ body {
 	background: url('../imgs/background01.png') no-repeat -94px -72px;
 	width: 103px;
 	height: 29px;
+}
+
+.sprite_small_search_icon {
+  display: inline-block;
+	background: url('../imgs/background01.png') no-repeat -337px -246px;
+	width: 10px;
+	height: 10px;
+}
+
+.sprite_camera_icon{
+  display: inline-block;
+   background: url('../imgs/background01.png') no-repeat -271px -104px;
+   width: 24px;
+   height: 22px;
+}
+
+.sprite_compass_icon{
+  display: inline-block;
+   background: url('../imgs/background01.png') no-repeat -130px -286px;
+   width: 23px;
+   height: 23px;
+}
+
+.sprite_heart_icon_outline {
+  display: inline-block;
+   background: url('../imgs/background01.png') no-repeat -52px -261px;
+   width: 24px;
+   height: 22px;
+}
+
+.sprite_user_icon_outline{
+  display: inline-block;
+   background: url('../imgs/background01.png') no-repeat -272px -182px;
+   width: 22px;
+   height: 24px;
 }
