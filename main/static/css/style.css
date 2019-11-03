@@ -112,8 +112,22 @@ body {
 
 }
 
+/* IDEA: 컨텐츠 영역 */
+
+#main_container {
+  padding-top: 130px;
+  display: flex;
+  justify-content: center;
+}
+
+#main_container .inner {
+  width: 935px;
+  height: 500px;
+  background: red;
+}
+
 /*
-아이콘들
+아이콘 불러오기
 */
 
 .sprite_insta_icon {
